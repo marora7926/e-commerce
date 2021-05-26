@@ -46,10 +46,10 @@ Product.init(
     }
   },
   {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
+    sequelize, // Link to database connection
+    timestamps: false, // Set to false to remove `created_at` and `updated_at` fields
+    freezeTableName: true, // Prevent sequelize from renaming the table
+    underscored: true, // Will add 'underscore' between two words in a table column heading
     modelName: 'product',
   }
 );
