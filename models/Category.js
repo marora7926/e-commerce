@@ -6,13 +6,24 @@ class Category extends Model {}
 
 Category.init(
   {
-    // define columns
+    // An `id` is automatically created by Sequelize,...
+    // ...though best practice would be to define the primary key ourselves
+    id: {
+      type: DataTypes.INTEGER, // integer value
+      allowNull: false, // doesn't allow null
+      primaryKey: true, // set as a primary key
+      autoIncrement: true // uses auto increment
+    },
+    category_name: {
+      type: DataTypes.STRING, // string 
+      allowNull: false // doesn't allow null
+    }
   },
   {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
+    sequelize, // Link to database connection
+    timestamps: false, // Set to false to remove `created_at` and `updated_at` fields
+    freezeTableName: true, // Prevent sequelize from renaming the table
+    underscored: true, // Will add 'underscore' between two words in a table column heading
     modelName: 'category',
   }
 );
