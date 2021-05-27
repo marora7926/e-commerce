@@ -236,6 +236,20 @@ This homework is graded based on the following criteria:
 
 * Repository contains quality readme with description and a link to a walkthrough video.
 
+
+## Self-notes
+  1. npm i to initite the project as npm project
+  2. add all given assets and files
+  3. npm i [dotenv, express, mysql2 and sequelize] to update the dependencies
+  4. add login credentials to .env and rename the file
+  5. write models for Category, Product, ProductTag and Tag
+  6. copy paste the database file to mysql workbench and create a blank database
+  7. npm run seed to fetch the given data
+  8. check if the data is seeded in workbench
+  9. write api route for Category, Product and Tag
+  10. npm start
+
+
 ## Review
 
 You are required to submit BOTH of the following for review:
