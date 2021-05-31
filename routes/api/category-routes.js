@@ -26,24 +26,21 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   try { 
-    const catData = await Category.findOne({
-    Where: { 
-      id: req.params.id 
-    },
-    include: {  // include its associated Products
-      model: Product,
+    const catData = await Category.findByPk(req.params.id, {
+      // include its associated Products
+      include: [{ model: Product, 
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
-    }
-  })
-  if(!catData[0]) {
+      }]
+    });
+    if(!catData) {
         res.status(404).json({message: 'This category does not exist'}); //status code for wrong query
         return;
-      }
+    }
       res.status(200).json(catData); // status code for the response
-    }
-    catch (err) {
-      res.status(500).json(err) //status code for Internal Server Error, it is a generic "catch-all" response
-    }
+  }
+  catch (err) {
+    res.status(500).json(err) //status code for Internal Server Error, it is a generic "catch-all" response
+  }
 });
 
 router.post('/', async (req, res) => {
