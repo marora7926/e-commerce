@@ -28,24 +28,24 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try { 
-    const tagData = await Tag.findOne({
-    Where: { 
-      id: req.params.id 
-    },
-    include: {  // include its associated Product data
-      model: Product,
-      attributes: ['product_name', 'price', 'stock', 'category_id']
-    }
-  })
-  if(!tagData[0]) {
+    const tagData = await Tag.findByPk(req.params.id, {
+      // include its associated Product data
+      include: [
+        { 
+          model: Product, 
+          attributes: ['product_name', 'price', 'stock', 'category_id']
+        }
+      ]
+    });
+    if(!tagData) {
         res.status(404).json({message: 'This tag does not exist'}); //status code for wrong query
         return;
       }
       res.status(200).json(tagData); // status code for the response
-    }
-    catch (err) {
-      res.status(500).json(err) //status code for Internal Server Error, it is a generic "catch-all" response
-    }
+  }
+  catch (err) {
+    res.status(500).json(err) //status code for Internal Server Error, it is a generic "catch-all" response
+  }
 });
 
 router.post('/', async (req, res) => {
