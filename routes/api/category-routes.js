@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     }
   })
   if(!catData[0]) {
-        res.status(404).json({message: 'This categories do not exist'}); //status code for wrong query
+        res.status(404).json({message: 'These categories do not exist'}); //status code for wrong query
         return;
       }
       res.status(200).json(catData); // status code for the response

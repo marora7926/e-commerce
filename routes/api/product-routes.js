@@ -6,7 +6,29 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // get all products
 router.get('/', (req, res) => {
   // find all products
-  // be sure to include its associated Category and Tag data
+  try { 
+    const productData = await Product.findAll({
+      attributes: ['id', 'product_name', 'price', 'stock'],
+      include: [
+        {
+          model: Category, // include its associated Category
+          attributes: 'category_name'
+        },
+        {  
+          model: Tag, // include its associated Tags
+          attributes: 'tag_name'
+        }
+      ]
+    })
+    if(!productData[0]) {
+        res.status(404).json({message: 'These products do not exist'}); //status code for wrong query
+        return;
+      }
+      res.status(200).json(productData); // status code for the response
+    }
+    catch (err) {
+      res.status(500).json(err) //status code for Internal Server Error, it is a generic "catch-all" response
+    }
 });
 
 // get one product
