@@ -60,7 +60,7 @@ https://github.com/marora7926/e-commerce
 ![Insomnia Core](./public/images/insomnia_core.png)
 
 ## Access Walkthrough Video here
-[Employee Management System Walkthrough Video](https://cloudstor.aarnet.edu.au/plus/s/xxxx)
+[Employee Management System Walkthrough Video](https://cloudstor.aarnet.edu.au/plus/s/NE65kIhAQu8ETIy)
 
 ### Walkthrough Video demonstrating:
 * the overall functionality of the e-commerce back end
