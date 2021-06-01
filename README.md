@@ -60,7 +60,7 @@ https://github.com/marora7926/e-commerce
 ![Insomnia Core](./public/images/insomnia_core.png)
 
 ## Access Walkthrough Video here
-[Employee Management System Walkthrough Video](https://cloudstor.aarnet.edu.au/plus/s/NE65kIhAQu8ETIy)
+[E-Commerce Walkthrough Video](https://cloudstor.aarnet.edu.au/plus/s/NE65kIhAQu8ETIy)
 
 ### Walkthrough Video demonstrating:
 * the overall functionality of the e-commerce back end
@@ -68,9 +68,9 @@ https://github.com/marora7926/e-commerce
 * how schema from the MySQL shell was created
 * how the database from the command line was seeded
 * how the application’s server started
-* GET routes for all categories, all products, and all tags being tested in Insomnia Core
-* GET routes for a single category, a single product, and a single tag being tested in Insomnia Core, and 
-* POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia Core
+* GET routes for all categories, all tags and all products being tested in Insomnia Core
+* GET routes for a single category, a single tag and a single product being tested in Insomnia Core, and 
+* POST, PUT, and DELETE routes for categories, tags and products being tested in Insomnia Core.
 
 - - -
 © 2021 Mohit Arora. Confidential and Proprietary. All Rights Reserved.
